@@ -1,0 +1,39 @@
+ 🛡️ Network Security Architecture Design Project
+
+---Overview---
+
+This repository contains the design, justification, and documentation for a secure network architecture configuration, completed as part of a course on computer systems security. 
+The goal was to identify necessary security components and configure them in a layered defense model to protect a conceptual computer system.
+
+ 1. Proposed Security Configuration Diagram
+
+The diagram below illustrates the perimeter defense and internal security segmentation, ensuring all external traffic passes through the primary security control point.
+
+ ![Network Security Diagram](diagram/network_diagram.png)`]
+
+2. Component Justification and Explanation
+
+---Comprehensive Network Security Architecture---
+
+The proposed network security architecture employs a robust **Defense-in-Depth** strategy using essential hardware and software components to protect the conceptual computer system. 
+At the **perimeter**, all external communications are filtered by a **Next-Gen Firewall (NGFW)**. This is the foundational hardware appliance, chosen because it doesn't just block ports; 
+it performs **deep packet inspection**, identifying and preventing complex threats, malware, and intrusions before they ever enter the network. Crucially, 
+the NGFW separates the internal network from the **Demilitarized Zone (DMZ)**, which is essential for isolating the public-facing **Web Server**. 
+The DMZ Switch ensures that if the Web Server is compromised, the threat remains contained in the "lobby" and cannot easily pivot to the internal, trusted **L3 Managed Switches**
+that handle internal routing and network segmentation (VLANs). 
+
+To catch threats that bypass the perimeter, an **Intrusion Detection/Prevention System (IDS/IPS)** is positioned behind the firewall. This security appliance monitors traffic flow, 
+actively blocking connection attempts that match known malicious signatures, providing a vital secondary layer of protection. All security events across the entire topology, including 
+logs from the NGFW, the Web Server, and the IPS, are continuously aggregated and analyzed by the **SIEM Server (Security Information and Event Management)**. This software solution is
+necessary for centralized visibility, allowing security analysts to **correlate** disparate alerts into a cohesive incident for rapid response. Finally, **Endpoint Security** software
+is mandated on all internal machines, including the **Serv** component. This is the final layer, ensuring that even if a threat penetrates the network, the device itself is protected
+against malware and unauthorized changes, establishing a complete security lifecycle.
+
+ 3. Tools Used
+
+* **Draw.io (diagrams.net):** Used for creating and visualizing the network topology.
+* **Markdown:** Used for documentation and creating this README file.
+
+---
+**Conclusion:** This project successfully models a secure, layered defense topology suitable for modern enterprise environments.
+
