@@ -9,7 +9,7 @@ The goal was to identify necessary security components and configure them in a l
 
 The diagram below illustrates the perimeter defense and internal security segmentation, ensuring all external traffic passes through the primary security control point.
 
- ![Network Security Diagram](diagram/network_diagram.png)`]
+ https://github.com/Nayeema-25/Network-Security-Architecture./commit/350b2ee49800de1ffe9c90304f35631129540880#diff-7df20ba6f5ac59e1fc480829088e2195e5cd55bf76bbdb84adcdd01ca2f0877d
 
 2. Component Justification and Explanation
 
